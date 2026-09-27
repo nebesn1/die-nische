@@ -1,0 +1,18 @@
+node_modules
+dist
+coverage
+.DS_Store
+*.local
+*.tsbuildinfo
+/docs/references/
+/src/generated/vfsContentManifest.generated.ts
+
+# Local/private authored website material. The VFS generator still scans these
+# directories when they exist locally; public releases must include content
+# only after an explicit source-snapshot review.
+content/home/user/Documents/Blog/
+
+# Local environment files. Keep an example file publishable if one is added.
+.env
+.env.*
+!.env.example

@@ -1,0 +1,1 @@
+Notes.txt lives only in browser memory for this prototype.

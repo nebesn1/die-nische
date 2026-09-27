@@ -1,0 +1,25 @@
+const windowIconIds = new Set([
+  "about",
+  "konqueror",
+  "konsole",
+  "kcalc",
+  "calendar",
+  "kwrite",
+  "kcontrol",
+  "kfind",
+  "panel-settings",
+  "my-computer",
+  "folder",
+  "home",
+  "desktop",
+  "documents",
+  "downloads",
+  "music",
+  "pictures",
+  "videos",
+  "trash",
+  "cdrom",
+  "floppy",
+]);
+
+export const isWindowIconId = (iconId: string): boolean => windowIconIds.has(iconId);

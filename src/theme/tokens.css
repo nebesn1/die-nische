@@ -1,0 +1,266 @@
+:root {
+  --kde-ui-scale: 1.4;
+  --kde-ui-scale-inverse: calc(1 / var(--kde-ui-scale));
+  /* Bootstrap values are replaced by ResponsiveLayoutProvider after #root is measured. */
+  --kde-effective-ui-scale: var(--kde-ui-scale);
+  --kde-effective-ui-scale-inverse: calc(1 / var(--kde-effective-ui-scale));
+  --kde-logical-viewport-width: calc(100vw * var(--kde-effective-ui-scale-inverse));
+  --kde-logical-viewport-height: calc(100dvh * var(--kde-effective-ui-scale-inverse));
+  --kde-panel-height: 46px;
+  --kde-titlebar-height: 22px;
+  --kde-menubar-height: 23px;
+  --kde-toolbar-height: 32px;
+  --kde-statusbar-height: 20px;
+  --kde-logical-work-area-width: var(--kde-logical-viewport-width);
+  --kde-logical-work-area-height: max(0px, calc(var(--kde-logical-viewport-height) - var(--kde-panel-height)));
+  --kde-safe-area-inset-top: env(safe-area-inset-top, 0px);
+  --kde-safe-area-inset-right: env(safe-area-inset-right, 0px);
+  --kde-safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+  --kde-safe-area-inset-left: env(safe-area-inset-left, 0px);
+  --kde-logical-safe-area-inset-top: calc(var(--kde-safe-area-inset-top) * var(--kde-effective-ui-scale-inverse));
+  --kde-logical-safe-area-inset-right: calc(var(--kde-safe-area-inset-right) * var(--kde-effective-ui-scale-inverse));
+  --kde-logical-safe-area-inset-bottom: calc(var(--kde-safe-area-inset-bottom) * var(--kde-effective-ui-scale-inverse));
+  --kde-logical-safe-area-inset-left: calc(var(--kde-safe-area-inset-left) * var(--kde-effective-ui-scale-inverse));
+
+  --kde-desktop-blue-dark: #075198;
+  --kde-desktop-blue: #1268bd;
+  --kde-desktop-blue-light: #2482d2;
+
+  --kde-surface: #dedbd3;
+  --kde-surface-light: #f3f1eb;
+  --kde-surface-dark: #aaa69e;
+  --kde-face: var(--kde-surface);
+  --kde-face-light: var(--kde-surface-light);
+  --kde-face-dark: var(--kde-surface-dark);
+
+  --kde-button-top: #fbfaf7;
+  --kde-button-bottom: #d4d1c9;
+  --kde-button-hover-top: #ffffff;
+  --kde-button-hover-bottom: #e2dfd7;
+  --kde-button-pressed-top: #b9b5ad;
+  --kde-button-pressed-bottom: #d4d1c9;
+  --kde-button-border-light: #ffffff;
+  --kde-button-border-dark: #7b776f;
+  --kde-button-inner-light: #e7e4dc;
+  --kde-button-inner-dark: #aca89f;
+  --kde-button-pressed-inner-dark: #77736b;
+  --kde-button-pressed-inner-light: #e7e4dc;
+  --kde-button-background: linear-gradient(180deg, var(--kde-button-top), var(--kde-button-bottom));
+  --kde-button-hover-background: linear-gradient(180deg, var(--kde-button-hover-top), var(--kde-button-hover-bottom));
+  --kde-button-pressed-background: linear-gradient(180deg, var(--kde-button-pressed-top), var(--kde-button-pressed-bottom));
+
+  --kde-chrome-top: #ffffff;
+  --kde-chrome-bottom: #c8c5bd;
+  --kde-chrome-background: linear-gradient(180deg, var(--kde-chrome-top), var(--kde-chrome-bottom));
+  --kde-menubar-top: var(--kde-chrome-top);
+  --kde-menubar-bottom: var(--kde-chrome-bottom);
+  --kde-kicker-top: #aaa69e;
+  --kde-kicker-light: #ffffff;
+  --kde-kicker-bottom: #ffffff;
+  --kde-kicker-gradient-stop: 66%;
+  --kde-kicker-launcher-icon-size: 32px;
+  --kde-kicker-clipboard-icon-size: 23px;
+  --kde-kicker-mobile-k-width: 36px;
+  --kde-kicker-mobile-pager-cell-size: 16px;
+  --kde-kicker-mobile-clock-width: 78px;
+  --kde-kicker-mobile-clock-time-width: 68px;
+  --kde-kicker-launcher-idle: transparent;
+  --kde-kicker-launcher-pressed-top: #b9b5ad;
+  --kde-kicker-launcher-pressed-bottom: #d4d1c9;
+  --kde-kicker-background: linear-gradient(
+    180deg,
+    var(--kde-kicker-top) 0%,
+    var(--kde-kicker-light) var(--kde-kicker-gradient-stop),
+    var(--kde-kicker-bottom) var(--kde-kicker-gradient-stop),
+    var(--kde-kicker-bottom) 100%
+  );
+  --kde-kicker-launcher-pressed-background: linear-gradient(180deg, var(--kde-kicker-launcher-pressed-top), var(--kde-kicker-launcher-pressed-bottom));
+  --kde-kicker-launcher-border-light: #ffffff;
+  --kde-kicker-launcher-border-dark: #7b776f;
+  --kde-kicker-face: #dedbd3;
+  --kde-kicker-border-highlight: #ffffff;
+  --kde-kicker-border-light: #e7e4dc;
+  --kde-kicker-border-mid: #aca89f;
+  --kde-kicker-border-dark: #57544e;
+  --kde-kicker-border-black: #202020;
+  --kde-kicker-button-top: #fbfaf7;
+  --kde-kicker-button-bottom: #d4d1c9;
+  --kde-kicker-button-hover-top: #ffffff;
+  --kde-kicker-button-hover-bottom: #e2dfd7;
+  --kde-kicker-button-pressed-top: #b9b5ad;
+  --kde-kicker-button-pressed-bottom: #d4d1c9;
+  --kde-kicker-button-border-light: #ffffff;
+  --kde-kicker-button-border-dark: #7b776f;
+  --kde-kicker-button-inner-light: #e7e4dc;
+  --kde-kicker-button-inner-dark: #aca89f;
+  --kde-kicker-button-pressed-inner-dark: #77736b;
+  --kde-kicker-button-pressed-inner-light: #e7e4dc;
+  --kde-kicker-menu-selection: #0a67ad;
+  --kde-kicker-menu-selection-text: #ffffff;
+  --kde-kicker-kmenu-selection: #e9cf63;
+  --kde-kicker-kmenu-selection-text: #111111;
+  --kde-kicker-kmenu-selection-border-light: #fff3a2;
+  --kde-kicker-kmenu-selection-border-dark: #796b0b;
+  --kde-kicker-menu-brand-background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px 4px),
+    linear-gradient(90deg, #063c83 0, #0e72bb 44%, #063c83 100%);
+  --kde-kicker-menu-brand-text: #ffffff;
+  --kde-kicker-menu-brand-text-shadow: 1px 1px 0 #002a55;
+  --kde-caption-button-size: 15px;
+  --kde-caption-button-gap: 4px;
+  --kde-caption-button-cluster-background: #aaa69e;
+  --kde-caption-button-cluster-padding: 1px 3px;
+  --kde-caption-button-cluster-margin: -1px -3px -2px 0;
+  --kde-caption-button-cluster-margin-maximized: -1px -3px -2px 0;
+  --kde-caption-button-cluster-align: stretch;
+  --kde-caption-button-glyph-size: 10px;
+  --kde-caption-button-glyph-stroke: 2px;
+  --kde-caption-button-glyph-color: #111111;
+  --kde-caption-button-top: #dedbd3;
+  --kde-caption-button-bottom: #aaa69e;
+  --kde-caption-button-hover-top: #f3f1eb;
+  --kde-caption-button-hover-bottom: #dedbd3;
+  --kde-caption-button-pressed-top: #aaa69e;
+  --kde-caption-button-pressed-bottom: #dedbd3;
+  --kde-caption-button-border-light: #f3f1eb;
+  --kde-caption-button-border-dark: #57544e;
+  --kde-caption-button-outline: var(--kde-border-dark);
+  --kde-caption-button-outer-light: #f3f1eb;
+  --kde-caption-button-outer-dark: #77736b;
+  --kde-caption-button-inner-light: #e7e4dc;
+  --kde-caption-button-inner-dark: #7b776f;
+  --kde-caption-button-pressed-inner-dark: #57544e;
+  --kde-caption-button-pressed-inner-light: #e7e4dc;
+  --kde-caption-button-background: linear-gradient(180deg, var(--kde-caption-button-top), var(--kde-caption-button-bottom));
+  --kde-caption-button-hover-background: linear-gradient(180deg, var(--kde-caption-button-hover-top), var(--kde-caption-button-hover-bottom));
+  --kde-caption-button-pressed-background: linear-gradient(180deg, var(--kde-caption-button-pressed-top), var(--kde-caption-button-pressed-bottom));
+
+  --kde-border-highlight: #ffffff;
+  --kde-border-light: #e7e4dc;
+  --kde-border-mid: #aca89f;
+  --kde-border-dark: #57544e;
+  --kde-border-black: #202020;
+  --kde-separator-dark: var(--kde-border-dark);
+  --kde-separator-light: var(--kde-border-highlight);
+
+  --kde-titlebar-active: #07579b;
+  --kde-active-title-start: var(--kde-titlebar-active);
+  --kde-active-title-end: #003d78;
+  --kde-active-title-text: #ffffff;
+  --kde-active-title-background: linear-gradient(90deg, var(--kde-active-title-start), var(--kde-active-title-end));
+
+  --kde-titlebar-inactive: #d7d4cd;
+  --kde-inactive-title-start: var(--kde-titlebar-inactive);
+  --kde-inactive-title-end: #bbb8b0;
+  --kde-inactive-title-text: #202020;
+  --kde-inactive-title-background: linear-gradient(90deg, var(--kde-inactive-title-start), var(--kde-inactive-title-end));
+
+  --kde-selection: #0a67ad;
+  --kde-selection-text: #ffffff;
+  --kde-menu-selection: var(--kde-selection);
+  --kde-menu-selection-text: var(--kde-selection-text);
+  --kde-kmenu-selection: #e9cf63;
+  --kde-kmenu-selection-text: #111111;
+  --kde-kmenu-selection-border-light: #fff3a2;
+  --kde-kmenu-selection-border-dark: #796b0b;
+  --kde-text: #111111;
+  --kde-window-text: var(--kde-text);
+  --kde-text-disabled: #6f6b63;
+  --kde-disabled-text: var(--kde-text-disabled);
+
+  --kde-clock-face: #bdbab2;
+  --kde-clock-face-light: #dad7cf;
+  --kde-clock-face-dark: #77746e;
+  --kde-clock-lit: #111111;
+  --kde-clock-dim: rgba(17, 17, 17, 0.1);
+  --kde-clock-date-text: #111111;
+
+  --kde-font-stack: Tahoma, Verdana, "DejaVu Sans", "Noto Sans CJK SC", "Microsoft YaHei", "WenQuanYi Zen Hei", Arial, sans-serif;
+
+  --kde-z-desktop-background: 0;
+  --kde-z-desktop-icons: 10;
+  --kde-z-windows: 100;
+  --kde-z-window-popup: 150;
+  --kde-z-desktop-popup: 175;
+  --kde-z-kicker: 200;
+  --kde-z-panel-popup: 300;
+  --kde-z-transient-popup: 300;
+  --kde-z-system-overlay: 400;
+}
+
+html[data-kde-theme="redmond"] {
+  --kde-surface: #c0c0c0;
+  --kde-surface-light: #dfdfdf;
+  --kde-surface-dark: #808080;
+  --kde-button-top: #c0c0c0;
+  --kde-button-bottom: #c0c0c0;
+  --kde-button-hover-top: #c0c0c0;
+  --kde-button-hover-bottom: #c0c0c0;
+  --kde-button-pressed-top: #c0c0c0;
+  --kde-button-pressed-bottom: #c0c0c0;
+  --kde-button-border-light: #ffffff;
+  --kde-button-border-dark: #000000;
+  --kde-button-inner-light: #ffffff;
+  --kde-button-inner-dark: #000000;
+  --kde-button-pressed-inner-dark: #000000;
+  --kde-button-pressed-inner-light: #ffffff;
+  --kde-button-background: #c0c0c0;
+  --kde-button-hover-background: #c0c0c0;
+  --kde-button-pressed-background: #c0c0c0;
+  --kde-chrome-top: #c0c0c0;
+  --kde-chrome-bottom: #c0c0c0;
+  --kde-chrome-background: #c0c0c0;
+  --kde-menubar-top: #c0c0c0;
+  --kde-menubar-bottom: #c0c0c0;
+  --kde-caption-button-background: #c0c0c0;
+  --kde-caption-button-hover-background: #c0c0c0;
+  --kde-caption-button-pressed-background: #c0c0c0;
+  --kde-caption-button-size: 16px;
+  --kde-caption-button-gap: 2px;
+  --kde-caption-button-cluster-background: transparent;
+  --kde-caption-button-cluster-padding: 0;
+  --kde-caption-button-cluster-margin: 0;
+  --kde-caption-button-cluster-align: center;
+  --kde-caption-button-glyph-size: 9px;
+  --kde-caption-button-glyph-stroke: 1.5px;
+  --kde-caption-button-glyph-color: var(--kde-text);
+  --kde-caption-button-top: var(--kde-button-top);
+  --kde-caption-button-bottom: var(--kde-button-bottom);
+  --kde-caption-button-hover-top: var(--kde-button-hover-top);
+  --kde-caption-button-hover-bottom: var(--kde-button-hover-bottom);
+  --kde-caption-button-pressed-top: var(--kde-button-pressed-top);
+  --kde-caption-button-pressed-bottom: var(--kde-button-pressed-bottom);
+  --kde-caption-button-border-light: var(--kde-button-border-light);
+  --kde-caption-button-border-dark: var(--kde-button-border-dark);
+  --kde-caption-button-outer-light: transparent;
+  --kde-caption-button-outer-dark: transparent;
+  --kde-caption-button-inner-light: var(--kde-button-inner-light);
+  --kde-caption-button-inner-dark: var(--kde-button-inner-dark);
+  --kde-caption-button-pressed-inner-dark: var(--kde-button-pressed-inner-dark);
+  --kde-caption-button-pressed-inner-light: var(--kde-button-pressed-inner-light);
+  --kde-titlebar-active: #000080;
+  --kde-active-title-start: #000080;
+  --kde-active-title-end: #4c8fca;
+  --kde-active-title-background: linear-gradient(90deg, var(--kde-active-title-start), var(--kde-active-title-end));
+  --kde-active-title-text: #ffffff;
+  --kde-titlebar-inactive: #c0c0c0;
+  --kde-inactive-title-start: #c0c0c0;
+  --kde-inactive-title-end: #c0c0c0;
+  --kde-inactive-title-background: #c0c0c0;
+  --kde-inactive-title-text: #111111;
+  --kde-selection: #000080;
+  --kde-menu-selection: #000080;
+  --kde-menu-selection-text: #ffffff;
+  --kde-kmenu-selection: #000080;
+  --kde-kmenu-selection-text: #ffffff;
+  --kde-kmenu-selection-border-light: #0000a0;
+  --kde-kmenu-selection-border-dark: #000040;
+  --kde-border-light: #dfdfdf;
+  --kde-border-mid: #c0c0c0;
+  --kde-border-dark: #808080;
+  --kde-border-black: #000000;
+  --kde-separator-dark: #000000;
+  --kde-separator-light: #dfdfdf;
+  --kde-text: #000000;
+  --kde-text-disabled: #808080;
+}

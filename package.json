@@ -1,0 +1,45 @@
+{
+  "name": "die-nische",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "A KDE 3-inspired web desktop platform for personal publishing and interactive web experiences.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:vfs-content": "node scripts/generate-vfs-content-manifest.mjs",
+    "migrate:publication-frontmatter": "node scripts/migrate-publication-frontmatter.mjs",
+    "predev": "node scripts/prepare-vfs-content-dev.mjs",
+    "dev": "vite",
+    "prebuild": "npm run generate:vfs-content",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "prelint": "npm run generate:vfs-content",
+    "lint": "eslint .",
+    "pretypecheck": "npm run generate:vfs-content",
+    "typecheck": "tsc --noEmit",
+    "pretest": "npm run generate:vfs-content",
+    "test": "vitest",
+    "pretest:run": "npm run generate:vfs-content",
+    "test:run": "vitest run"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@types/node": "^24.1.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "eslint": "^9.32.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "jsdom": "^30.0.1",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.38.0",
+    "vite": "^7.0.0",
+    "vitest": "^3.2.0"
+  }
+}
